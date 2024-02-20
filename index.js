@@ -7,6 +7,3 @@ function Dog(name, color, age) {
 const dog1 = new Dog('Tuzik', 'black', '1');
 
 const dog2 = new Dog('Knopa', 'white', '3');
-
-console.log(Dog);
-
