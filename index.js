@@ -1,9 +1,3 @@
-/*
-
-Задача : У нас есть объект, ключом в котором есть день недели,а значением - планы на этот день.
-Принятть от пользователя (через prompt),название дня недели и выдать ему (alert), что запланировано у пользователя на этото день.
-*/
-
 const obj = {
     Mon: 'get a drive license',
     Tue: 'come to new boss',
@@ -11,9 +5,24 @@ const obj = {
     Thu: 'go to gym',
     Fri: 'study spanish language',
     Sat: 'go to swim',
-    Sun: 'meet with friends'
+    Sun: 'meet with friends',
+    'favorite color' : 'skyblue', // practise operator IN
+    0: 'gaga' // practise operator IN
 }
 
-const userValue = String(prompt('Введите день недели из этих вариантов: \nMon \nTue \nWed \nThu \nFri \nSat \nSun'));
-alert(obj [userValue] ? obj [userValue] : 'Error Happend');
+// оператор in 
+// in - бинарный оператор
+// "key" in obj(название объекта).
 
+console.log('Mon' in obj);
+console.log('Tue' in obj);
+console.log('Wed' in obj);
+console.log('Thu' in obj);
+console.log('Fri' in obj);
+console.log('Sat' in obj);
+console.log('Sun' in obj);
+
+console.log('favorite color' in obj); // practise operator IN
+console.log(0 in obj); // practise operator IN
+
+// Оператор In может проверять только одно!
