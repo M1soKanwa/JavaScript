@@ -1,30 +1,19 @@
-const user = {
-    'name': 'John', // Ключ 'name', значение - 'John'
-    'favorite color': 'red' ,
-    0: 'value'
+/*
+
+Задача : У нас есть объект с разными версиями приветствия.
+Вывести пользователю приветствие, зависимое от значения которое он ввёл.
+
+*/
+
+const greets = {
+    15: 'Hi',
+    17: 'Ya, whats up',
+    19: 'Hello', 
+    30: 'Good morning amigo!'
 }
 
-// Ключом в объекте может быть рядок или тип данных Symbol
- 
-//  .  --->>> оператор доступа по имени свойства (когда речь идет про валидные идентификаторы)
+const valueFromUser = 30;
 
-console.log(user.name); // John
-// user.'favorite color'; --->>>  syntax ERROR
-// user.0; --->>> synax ERROR
+console.log(greets[valueFromUser]); // Hello 
 
-// [] - оператор доступа к вычислительным свойствам (когда речь идёт про не валидные идентификаторы)
-
-console.log(user['favorite color']); // RED
-
-console.log(user[0]); // Value
-
-
-const someOption = {
-    2: 10
-}
-
-// Задача : получить значение которое находится под ключом 2.
-
-console.log(someOption[2]);
-console.log(someOption ['2']);
 
