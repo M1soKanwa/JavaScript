@@ -42,3 +42,33 @@ for (const key in obj) {
     console.log(`"${key}" have *${obj[key]}*`)
     }
 }    
+
+/*
+
+Задача : 
+
+У нас есть объект с зарплатами всех отделов.
+Написать функцию,которая возвращает общую сумму,потраченную на зарплаты всех отделов.
+
+
+*/
+
+const departmentSalary = {
+    HR: 120000,
+    development: 5500000,
+    PR: 50000,
+    marketing: 120000,
+    assistant: undefined
+}
+
+function sumSalary(salaryObject) {
+    let sum = 0;
+
+    for(let key in salaryObject){
+        if(typeof salaryObject[key] === 'number') {
+            sum += salaryObject[key];
+        }
+    }
+
+    return sum;
+}
