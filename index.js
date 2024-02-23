@@ -1,8 +1,27 @@
-function greeting(user) {
-    return `Hello ${'name' in user ? user.name : 'Anonym'}`;
+const user = {
+    name: 'Don',
+    lastname: 'Bo',
+    age: 32,
+    'favorite color' : 'skyblue',
+    movie: 'Runner',
+    avatar: 'http://.....'
 }
 
-const user = {
-    name: 'Tommy',
-    email: 'chokopai29023@gmail.com'
+//for in --->>> используется для перебора ключей в объекте.
+// Не этот for(;;)
+/*
+
+for(variable in object) {
+    // Код который выполняется для каждого свойства.
+}
+
+variable - переменная которая будет принимать ключи свойств.
+object - объект,свойства которого мы хотим перебрать.
+
+*/
+
+// Задача : в объекте user вывести название всех ключей и свойств.
+
+for (let key in user) {
+    console.log(`${key} ---> ${user[key]}`); // key ---> value(свойства).
 }
