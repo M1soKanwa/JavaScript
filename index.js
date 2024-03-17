@@ -1,70 +1,43 @@
-//   Классы 
+function calcValues(a, b) {
+  return [
+    a + b,
+    a - b,
+    a * b,
+    a / b
+  ]
+}
 
-// class MyClass {
-//     // isAdmin = false                // Тут писать isAdmin.
-//     constructor(name) {
-//         this.name = name;
-//         this.isAdmin = true  // Либо тут писать isAdmin .
-//     }
-//     method1() {
-//         console.log('Hello!');                  //
-//     }                                             ///       Method , их нужно записывать без запятой.
-//     method2() {                                 //
-//         console.log('Hello!');
-//     }
-//     get printName() {
-//         return this.name
-//     }
-// }
+const [sum, sub = 'Вычитания нет', mult, ...other] = calcValues(42, 10)
+// const sum = result[0]
+// const sub = result[1]
+// const [sum, sub] = result
 
+console.log(sum, mult, other, sub)
 
-// let user1 = new MyClass('Luna');
-// console.log(user1.printName);
-
-
-
-
-
-
-class Animal {
-  static printName = 'Это класс для создания животного'
-  static method1 () {
-      console.log('Это код метода класса');
-  }
-  constructor(name) {
-      this.name = name
-      this.speed = 0
-  }
-
-  run(speed) {
-      this.speed = speed
-      console.log(`${this.name} бежит со скоростью ${this.speed}`);
-  }
-
-  stop() {
-      this.speed = 0
-      console.log('Мы остановили животное');
+// Objects
+const person = {
+  name: 'Max',
+  age: 20,
+  address: {
+    country: 'Ukraine',
+    city: 'Kiev'
   }
 }
 
-class Rabbit extends Animal {         //   extends  -  наследует
-  //constructor(...arg){
-  // super(...arg)   
-  // } 
-  hide() {
-      console.log('Я спрятался');
-  }
+// const name = person.name
+const {
+  name: firstName = 'Без имени',
+  age,
+  car = 'Машины нет',
+  address: {city: homeTown, country}
+} = person
 
-  stop() {
-      super.stop()                      // Команду **Super** нужно использовать обязательно если наследуется от родительского.
-      this.hide()
-  }
+// const {name, ...info} = person
+// console.log(name, info)
+
+function logPerson({name: firstName = '111', age}) {
+  console.log(firstName + ' ' + age)
 }
 
-Animal.method1();
 
-const rabbit = new Rabbit('Кролик');      
-rabbit.stop();
-// rabbit.run(10);
-
-// console.log(rabbit);
+logPerson(person)
