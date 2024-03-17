@@ -1,43 +1,20 @@
-function calcValues(a, b) {
-  return [
-    a + b,
-    a - b,
-    a * b,
-    a / b
-  ]
+// console.log(this); // Window object
+
+// alert('test'); // window.alert('test')
+
+//console.dir(document);
+
+/*
+1. Всі елементи на сторінці - окремі об'єкти
+2. Всі елементи можна підписати на події
+*/
+
+function getAlert() {
+  alert('Hello user!');
 }
 
-const [sum, sub = 'Вычитания нет', mult, ...other] = calcValues(42, 10)
-// const sum = result[0]
-// const sub = result[1]
-// const [sum, sub] = result
+const buttonElement = document.getElementById('btn');
 
-console.log(sum, mult, other, sub)
-
-// Objects
-const person = {
-  name: 'Max',
-  age: 20,
-  address: {
-    country: 'Ukraine',
-    city: 'Kiev'
-  }
-}
-
-// const name = person.name
-const {
-  name: firstName = 'Без имени',
-  age,
-  car = 'Машины нет',
-  address: {city: homeTown, country}
-} = person
-
-// const {name, ...info} = person
-// console.log(name, info)
-
-function logPerson({name: firstName = '111', age}) {
-  console.log(firstName + ' ' + age)
-}
-
-
-logPerson(person)
+buttonElement.addEventListener('click', getAlert);
+// 1 варіант: зареєстрували обробник події натискання миші на кнопку
+// 2 варіант: навісили обробник натискання миші на кнопку
