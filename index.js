@@ -9,8 +9,14 @@
 2. Всі елементи можна підписати на події
 */
 
-function getAlert() {
-  alert('Hello user!');
+function getAlert(event) {
+  const btn = event.target;
+
+  if(btn.style.backgroundColor === 'red') {
+      btn.style.backgroundColor = 'unset';
+  } else {
+      btn.style.backgroundColor = 'red';
+  }
 }
 
 const buttonElement = document.getElementById('btn');
