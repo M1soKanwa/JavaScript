@@ -1,8 +1,30 @@
-function Click() {
-    const number = prompt('Введите номер от 1 до 5');
-    if(number <= 5)
-    alert (`Твоё число ${number}`);
-     else if (number > 5){
-        console.log('Неверное число,введите число от 1 до 5');
+function getAlert (event) {
+    const btn = event.target;
+
+    if (btn.style.backgroundColor === 'green'){
+        btn.style.backgroundColor = 'unset';
+    } else {
+        btn.style.backgroundColor = 'green';
     }
 }
+
+const buttonElement = document.getElementById('btn');
+
+buttonElement.addEventListener('click',getAlert);
+
+
+
+
+
+
+const none = document.getElementById('no-btn');
+
+none.addEventListener('mousemove',display);
+
+function display(event) {
+    const none = event.target;
+    
+    none.style.display = 'none';
+}
+
+
