@@ -1,30 +1,49 @@
-function getAlert (event) {
-    const btn = event.target;
+// Регулярные выражения = это способ поиска совпадений шаблона с текстом.
 
-    if (btn.style.backgroundColor === 'green'){
-        btn.style.backgroundColor = 'unset';
-    } else {
-        btn.style.backgroundColor = 'green';
-    }
+/*
+
+Спецсимволы : 
+
+. - любой одиночный символ
+
+.. - два любых символа и тд..
+
+[] - диапазон ( a-z A-Z и так далее).
+$ - конец строки.
+\ - экранирование.
+^ - начало строки.
+\d - любая цифра.
+\D - всё что угодно, кроме цифр.
+\s - найти пробелы.
+\S - всё кроме пробелов.
+\w - буква.
+\W - всё кроме букв.
+\b - выделяет границы слова.
+\B - всё кроме границю.
+* - от нуля и выше.
++ - от 1 и выше.
+? - ноль или 1 раз.
+(\d[\s-]) - группировка. {
+    4 4
+    4-4
 }
 
-const buttonElement = document.getElementById('btn');
 
-buttonElement.addEventListener('click',getAlert);
+Квантификация --->>>
 
+//     \b\w{3}\b
 
-
-
-
-
-const none = document.getElementById('no-btn');
-
-none.addEventListener('mousemove',display);
-
-function display(event) {
-    const none = event.target;
-    
-    none.style.display = 'none';
-}
+//     искать (w) 3 раза.
 
 
+\be*
+
+ben
+been
+beeen
+beeeen
+и тд.
+
+
+
+*/
