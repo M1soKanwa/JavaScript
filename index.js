@@ -1,49 +1,32 @@
-// Регулярные выражения = это способ поиска совпадений шаблона с текстом.
-
-/*
-
-Спецсимволы : 
-
-. - любой одиночный символ
-
-.. - два любых символа и тд..
-
-[] - диапазон ( a-z A-Z и так далее).
-$ - конец строки.
-\ - экранирование.
-^ - начало строки.
-\d - любая цифра.
-\D - всё что угодно, кроме цифр.
-\s - найти пробелы.
-\S - всё кроме пробелов.
-\w - буква.
-\W - всё кроме букв.
-\b - выделяет границы слова.
-\B - всё кроме границю.
-* - от нуля и выше.
-+ - от 1 и выше.
-? - ноль или 1 раз.
-(\d[\s-]) - группировка. {
-    4 4
-    4-4
-}
-
-
-Квантификация --->>>
-
-//     \b\w{3}\b
-
-//     искать (w) 3 раза.
-
-
-\be*
-
-ben
-been
-beeen
-beeeen
-и тд.
 
 
 
-*/
+console.log('Request Data...');
+
+
+
+
+
+const p = new Promise(function(resolve, reject) {
+       setTimeout(() => {
+        console.log('Preparing data...');
+        const backendData = {
+            server :'aws', 
+            port : 2000,
+            status : 'working'
+        }
+        resolve(backendData)
+       },2000)   
+})
+
+p.then(data => {
+    return new Promise((resolve, reject) => {
+    setTimeout(() => {
+        data.modified = true
+        resolve(data)
+       // console.log('Data Received', backendData);
+    },2000)
+    })
+}).then(clientData => {
+    console.log('Data received', clientData);
+})
